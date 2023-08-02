@@ -35,7 +35,7 @@ public class WishlistController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/{clientId}/list")
+    @GetMapping("/{clientId}")
     public ResponseEntity<List<Product>> getClientWishlist(@PathVariable String clientId) throws InterruptedException, ExecutionException, WishlistException {
         List<Product> wishlist = service.getClientWishlist(clientId);
         return new ResponseEntity<>(wishlist, HttpStatus.OK);
